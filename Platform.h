@@ -21,6 +21,7 @@
 	#error Cannot define both PLATFORM_ARDUINO and PLATFORM_MBED
 #elif defined(PLATFORM_ARDUINO)
 	#include <Arduino.h>
+	#define PLATFORM_PIN_TYPE uint8_t
 	#ifdef abs
 		#undef abs
 	#endif
@@ -32,6 +33,7 @@
 	#endif
 #elif defined(PLATFORM_MBED)
 	#include <mbed.h>
+	#define PLATFORM_PIN_TYPE PinName
 #else
 	#error Must define PLATFORM_ARDUINO or PLATFORM_MBED
 #endif
