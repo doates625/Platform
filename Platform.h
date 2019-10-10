@@ -16,12 +16,15 @@
  * file also undefines some of their bad macro functions.
  */
 #pragma once
+#include <stdint.h>
 
 #if defined(PLATFORM_ARDUINO) && defined(PLATFORM_MBED)
 	#error Cannot define both PLATFORM_ARDUINO and PLATFORM_MBED
 #elif defined(PLATFORM_ARDUINO)
 	#include <Arduino.h>
 	#define PLATFORM_PIN_TYPE uint8_t
+	#define PLATFORM_ENABLE_INTERRUPTS() interrupts()
+	#define PLATFORM_DISABLE_INTERRUPTS() noInterrupts()
 	#ifdef abs
 		#undef abs
 	#endif
@@ -34,6 +37,8 @@
 #elif defined(PLATFORM_MBED)
 	#include <mbed.h>
 	#define PLATFORM_PIN_TYPE PinName
+	#define PLATFORM_ENABLE_INTERRUPTS() __enable_irq()
+	#define PLATFORM_DISABLE_INTERRUPTS() __disable_irq()
 #else
 	#error Must define PLATFORM_ARDUINO or PLATFORM_MBED
 #endif
