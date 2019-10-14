@@ -5,6 +5,18 @@
 #include <Platform.h>
 
 /**
+ * Namespace Constants
+ */
+namespace Platform
+{
+#if defined(PLATFORM_5V)
+	const float vcc = 5.0f;
+#elif defined(PLATFORM_3V3)
+	const float vcc = 3.3f;
+#endif
+}
+
+/**
  * @brief Global interrupt enable
  */
 void Platform::enable_interrupts()
