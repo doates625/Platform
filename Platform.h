@@ -64,9 +64,9 @@ namespace Platform
 {
 	// Pin Type Definition
 #if defined(PLATFORM_ARDUINO)
-	typedef uint8_t pintype_t;
+	typedef uint8_t pin_t;
 #elif defined(PLATFORM_MBED)
-	typedef PinName pintype_t;
+	typedef PinName pin_t;
 #endif
 
 	// Operating Voltage
