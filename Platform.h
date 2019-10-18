@@ -1,6 +1,6 @@
 /**
  * @file Platform.h
- * @brief Embedded system header for Arduino and Mbed projects.
+ * @brief Embedded system header for Arduino and Mbed projects
  * @author Dan Oates (WPI Class of 2020)
  * 
  * This file is meant to replace <Arduino.h> and <mbed.h> in libraries which
