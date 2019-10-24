@@ -55,6 +55,7 @@ namespace Platform
 	// Methods
 	void enable_interrupts();
 	void disable_interrupts();
+	void wait(float s);
 	void wait_ms(uint32_t ms);
 	void wait_us(uint32_t us);
 }

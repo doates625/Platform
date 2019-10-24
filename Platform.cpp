@@ -41,6 +41,19 @@ void Platform::disable_interrupts()
 }
 
 /**
+ * @brief Software delay
+ * @param s Time to wait [s]
+ */
+void Platform::wait(float s)
+{
+#if defined(PLATFORM_ARDUINO)
+	delay(ms * 1000.0f);
+#elif defined(PLATFORM_MBED)
+	::wait(s);
+#endif
+}
+
+/**
  * @brief Millisecond software delay
  * @param ms Time to wait [ms]
  */
