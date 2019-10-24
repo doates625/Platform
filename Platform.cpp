@@ -47,7 +47,7 @@ void Platform::disable_interrupts()
 void Platform::wait(float s)
 {
 #if defined(PLATFORM_ARDUINO)
-	delay(ms * 1000.0f);
+	delay(s * 1000.0f);
 #elif defined(PLATFORM_MBED)
 	::wait(s);
 #endif
