@@ -42,12 +42,14 @@
  */
 namespace Platform
 {
-	// Pin Type Definition
-#if defined(PLATFORM_ARDUINO)
-	typedef uint8_t pin_t;
-#elif defined(PLATFORM_MBED)
-	typedef PinName pin_t;
-#endif
+	// Pin and Serial Type Definitions
+	#if defined(PLATFORM_ARDUINO)
+		typedef uint8_t pin_t;
+		typedef Stream serial_t;
+	#elif defined(PLATFORM_MBED)
+		typedef PinName pin_t;
+		typedef Serial serial_t;
+	#endif
 
 	// Operating Voltage
 	extern const float vcc;
