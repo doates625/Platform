@@ -13,6 +13,7 @@
 	#error Cannot define both PLATFORM_ARDUINO and PLATFORM_MBED
 #elif defined(PLATFORM_ARDUINO)
 	#include <Arduino.h>
+	#include <Wire.h>
 	#ifdef abs
 		#undef abs
 	#endif
